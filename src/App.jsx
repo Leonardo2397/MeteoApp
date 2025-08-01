@@ -1,35 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// import { Routes, Route } from 'react-router-dom'
+// import './App.css'
+// import MyNavbar from './components/MyNavbar'
+// import MyHomePage from './components/MyHomePage'
+// import DayWeatherDetails from './components/DayWheaterDetails'
+
+// function App() {
+//   return (
+//     <>
+//       <MyNavbar />
+//       <Routes>
+//         <Route path="/" element={<MyHomePage />} />
+//         <Route path="/details/:date" element={<DayWeatherDetails />} />
+//       </Routes>
+//     </>
+//   )
+// }
+
+// export default App
+
+
+import { useState } from "react";
+import MyNavbar from "./components/MyNavbar";
+import MyHomePage from "./components/MyHomePage";
+import DayWeatherDetails from "./components/DayWeatherDetails";
+import { Routes, Route } from "react-router-dom";
+import "./App.css";
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [city, setCity] = useState("Rome");
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <MyNavbar onSearch={setCity} />
+      <Routes>
+        <Route path="/" element={<MyHomePage city={city} />} />
+        <Route path="/details/:date" element={<DayWeatherDetails city={city} />} />
+      </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
