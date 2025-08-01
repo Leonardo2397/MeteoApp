@@ -1,43 +1,4 @@
-// import Container from 'react-bootstrap/Container';
-// import Nav from 'react-bootstrap/Nav';
-// import Navbar from 'react-bootstrap/Navbar';
-// import { Form, Button } from 'react-bootstrap';
 
-
-
-// function MyNavbar() {
-//   return (
-//     <Navbar expand="lg" className="bg-body-tertiary">
-//       <Container>
-//         <Navbar.Brand href="#home">EpiWeather
-           
-//           </Navbar.Brand>
-//         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-//         <Navbar.Collapse id="basic-navbar-nav">
-//           {/* Menù di sinistra */}
-//           <Nav className="me-auto">
-//             <Nav.Link href="#home">Home</Nav.Link>
-//             <Nav.Link href="#link">Link</Nav.Link>
-            
-//           </Nav>
-
-//           {/* Search form allineato a destra */}
-//           <Form className="d-flex ms-auto">
-//             <Form.Control
-//               type="search"
-//               placeholder="Search"
-//               className="me-2"
-//               aria-label="Search"
-//             />
-//             <Button variant="outline-primary" type="submit">Submit</Button>
-//           </Form>
-//         </Navbar.Collapse>
-//       </Container>
-//     </Navbar>
-//   );
-// }
-
-// export default MyNavbar;
 
 
 import { useState } from "react";
@@ -47,10 +8,13 @@ import Navbar from "react-bootstrap/Navbar";
 import { Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-
+// la funzione riceve come prop la funzione onsearch
 function MyNavbar({ onSearch }) {
+    // stato per verificare input di ricerca
   const [inputCity, setInputCity] = useState("");
 
+
+  // gestire submit form
   const handleSubmit = (e) => {
     e.preventDefault();
     if (inputCity.trim() !== "") {
