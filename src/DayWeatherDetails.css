@@ -1,0 +1,14 @@
+.glass-list-item {
+  background: rgba(255, 255, 255, 0.15); /* bianco trasparente */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  margin-bottom: 8px;
+  color: #fff; /* testo chiaro per contrasto */
+  transition: background-color 0.3s ease;
+}
+
+.glass-list-item:hover {
+  background: rgba(255, 255, 255, 0.25);
+}

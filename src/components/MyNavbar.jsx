@@ -69,7 +69,7 @@ function MyNavbar({ onSearch }) {
 <Nav.Link as={Link} to="/" onClick={() => onSearch("Rome")} className="custom-navbar-text">
   Home
 </Nav.Link>          
-  <Nav.Link href="#link" className="custom-navbar-text">Link</Nav.Link>
+  <Nav.Link href="#link" className="custom-navbar-text">Info</Nav.Link>
           </Nav>
           <Form className="d-flex ms-auto" onSubmit={handleSubmit}>
             <Form.Control

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Card, Spinner, ListGroup } from "react-bootstrap";
 import { useParams } from "react-router-dom";
+import '../DayWeatherDetails.css';
 
 const apiKey = "71aa2fd4d167c8605dff994169fcdc91";
 
@@ -49,15 +50,15 @@ function DayWeatherDetails({ city }) {
     return <p>Dettagli meteo non disponibili per la città: {city} nella data: {date}</p>;
 
   return (
-    <Card className="m-3 p-3 shadow">
+    <Card className="m-3 p-3 shadow bg-info">
       <Card.Body>
-        <Card.Title>
+        <Card.Title className="text-center">
           Dettagli meteo per {city} il {date}
         </Card.Title>
 
         <ListGroup>
           {details.map((item) => (
-            <ListGroup.Item key={item.dt}>
+            <ListGroup.Item key={item.dt} className="glass-list-item text-center text-dark">
               <strong>{new Date(item.dt_txt).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</strong> —{" "}
               {item.weather[0].description}, {Math.round(item.main.temp)}°C, umidità {item.main.humidity}%, vento {item.wind.speed} m/s
               <img
